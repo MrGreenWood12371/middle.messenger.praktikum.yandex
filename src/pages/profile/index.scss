@@ -1,0 +1,134 @@
+.profile {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    
+    &__nav {
+        width: 64px;
+        height: 100vh;
+
+        background-color: #FBFBFB;
+
+        border-right: 1px solid $border-color;
+
+        &-link  {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: 100%;
+
+            &-image {
+                $size: 28px;
+
+                width: $size;
+                height: $size;
+            }
+
+            &:hover {
+                background-color: darken($color: #FBFBFB, $amount: 5%);
+            }
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 510px;
+        margin: 0 auto;
+        padding-top: 60px;
+        padding-bottom: 100px;
+
+        & .avatar {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+    }
+
+    &__data {
+        
+        &-field {
+            display: flex;
+            align-items: center;
+
+            padding-bottom: 10px;
+
+            border-bottom: 1px solid $border-color;
+
+            & .input__label {
+                $size: 13px;
+
+                font-size: $size;
+                line-height: $size;
+
+                flex-shrink: 0;
+
+                width: 165px;
+                margin-right: 10px;
+
+                color: $main-color;
+            }
+
+            & .input__field {
+                margin-left: auto;
+
+                text-align: right;
+
+                border: 0rem;
+                color: $label-color;
+            }
+        }
+
+        &-save-button {
+            width: 280px;
+        }
+
+        &-item {
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+
+                & .profile__data-field {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        &-list {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    &__link {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+        border-bottom: 1px solid $border-color;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

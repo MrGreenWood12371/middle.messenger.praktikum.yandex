@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yandex.middle.chat</title>
+    <link rel="stylesheet" href="../../../style/index.scss" />
+</head>
+<body>
+    <main class="main-wrapper">
+        <div class="auth login">
+            <form action="" class="auth__form">
+                <h2 class="auth__title">
+                Вход
+                </h2>
+                <div class="auth__fields">
+                    {{> input type='text' id='login' defaultValue='vanya' value='Войти' containerClass='auth__field' error-message='Неверный логин'}}
+                    {{> input class='input__field_error' defaultValue='vAnOVanya' error-message='Неверный пароль' type='password' id='password' value='Пароль' containerClass='auth__field'}}
+                </div>
+                <div class="auth__buttons">
+                    {{> button type='submit' label='Войти'mod='button_primary auth__button'}}
+                    {{> link value='Нет аккаунта?' href='../register/register.hbs'}}
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import './vars.scss';
+@import './base.scss';
+
+@import '/src/components/button/button.scss';
+@import '/src/components/input/input.scss';
+@import '/src/components/link/link.scss';
+@import '/src/components/error/error.scss';
+@import '/src/components/chat-item/chat-item.scss';
+@import '/src/components/avatar/avatar.scss';
+@import '/src/components/file-input/file-input.scss';
+@import '/src/components/modal/modal.scss';
+@import '/src/components/search-input/search-input.scss';
+
+@import '/src/pages/auth/index.scss';
+@import '/src/pages/auth/login/login.scss';
+@import '/src/pages/auth/register/register.scss';
+@import '/src/pages/chat/chat.scss';
+@import '/src/pages/profile/index.scss';
