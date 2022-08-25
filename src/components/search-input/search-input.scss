@@ -1,0 +1,20 @@
+.search-input {
+    height: 32px;
+
+    border: 0;
+    border-radius: 5px;
+    background-color: $search-color;
+
+    &::placeholder {
+        $size: 12px;
+
+        font-size: $size;
+        line-height: $size;
+
+        text-align: center;
+
+        background-image: url('/static/search.svg');
+        background-repeat: no-repeat;
+        background-position: 95px center;
+    }
+}

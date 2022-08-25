@@ -1,0 +1,26 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 auto;
+
+    &__title  {
+        $size: 40px;
+
+        font-size: $size;
+        font-weight: 500;
+        line-height: $size;
+
+        margin-bottom: 20px;
+    }
+
+    &__message {
+        $size: 20px;
+
+        font-size: $size;
+        line-height: $size;
+
+        margin-bottom: 70px;
+    }
+}

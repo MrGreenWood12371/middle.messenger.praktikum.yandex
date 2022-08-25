@@ -1,0 +1,38 @@
+  
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: $main-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul, 
+li,
+p,
+hr,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+.main-wrapper {
+    display: flex;
+    align-items: center;
+
+    min-height: 100vh;
+}

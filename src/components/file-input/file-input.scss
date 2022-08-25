@@ -1,0 +1,15 @@
+.file-input {
+    &__label {
+        font-size: 12px;
+        line-height: 16px;
+
+        text-decoration: underline;
+        color: $primary-color;
+
+        cursor: pointer;
+    }
+
+    &__field {
+        display: none;
+    }
+}
