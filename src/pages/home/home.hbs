@@ -1,0 +1,31 @@
+<div>
+    <h1>{{label}}</h1>
+    {{{Link onClick=goToLogin value='Страница входа' }}}
+    <br/>
+    {{{Link onClick=goToRegister value='Страница регистрации' }}}
+    <br/>
+    {{{Link onClick=goToChat value='Страница чата' }}}
+    <br/>
+    {{{Link onClick=goToProfile value='Страница профиля' }}}
+    <br/>
+    {{{Link onClick=goToEditPassword value='Страница редактирования пароля' }}}
+    <br/>
+    {{{Link onClick=goToEditProfile value='Страница редактирования профиля' }}}
+    <br/>
+    {{{Link onClick=goToServerError value='Страница 500' }}}
+    <br/>
+    {{{Link onClick=goToNotFoundError value='Страница 404' }}}
+    <br/>
+    <br/>
+    <div class="modals">
+        {{{FileModal title='Загрузите файл'}}}
+        <br>
+        {{{FileModal title='Файл загружен'}}}
+        <br>
+        {{{FileModal title='Загрузите файл' errorMessage='Нужно выбрать файл'}}}
+        <br>
+        {{{FileModal titleClass='modal_error' title='Ошибка, попробуйте ещё раз'}}}
+        <br>
+        {{{UserModal title='Добавить пользователя'}}}
+    </div>
+</div>

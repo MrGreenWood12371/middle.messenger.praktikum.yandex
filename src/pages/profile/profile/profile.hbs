@@ -1,55 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yandex.middle.chat</title>
-    <link rel="stylesheet" href="../../../style/index.scss" />
-</head>
-<body>
-    <main class="main-wrapper">
+<main class="main-wrapper">
         <div class="profile">
             <nav class="profile__nav">
                 <a href="/src/pages/chat/chat.hbs" class="profile__nav-link">
-                    <img alt="назад" src="/static/nav-previous.svg" class="profile__nav-link-image">
+                    <img alt="назад" src="{{prevButtonImage}}" class="profile__nav-link-image">
                 </a>
             </nav>
             <div class="profile__main">
-                {{> avatar image-src='/static/profile-placeholder.svg' name='Иван'}}
+                {{{Avatar imageSrc=profileImage name='Иван'}}}
                 <ul class="profile__data-list">
                     <li class="profile__data-item">
-                        {{> input containerClass='profile__data-field input_disabled' type='text' value='Почта' defaultValue='pochta@yandex.ru'}}
+                        {{{LabeledInput containerClass='profile__data-field input_disabled' type='text' value='Почта' defaultValue='pochta@yandex.ru'}}}
                     </li>
                     <li class="profile__data-item">
-                        {{> input containerClass='profile__data-field input_disabled' type='text' value='Логин' defaultValue='ivanivanov'}}
+                        {{{LabeledInput containerClass='profile__data-field input_disabled' type='text' value='Логин' defaultValue='ivanivanov'}}}
                     </li>
                     <li class="profile__data-item">
-                        {{> input containerClass='profile__data-field input_disabled' type='text' value='Имя' defaultValue='Иван'}}
+                        {{{LabeledInput containerClass='profile__data-field input_disabled' type='text' value='Имя' defaultValue='Иван'}}}
                     </li>
                     <li class="profile__data-item">
-                        {{> input containerClass='profile__data-field input_disabled' type='text' value='Фамилия' defaultValue='Иванов'}}
+                        {{{LabeledInput containerClass='profile__data-field input_disabled' type='text' value='Фамилия' defaultValue='Иванов'}}}
                     </li>
                     <li class="profile__data-item">
-                        {{> input containerClass='profile__data-field input_disabled' type='text' value='Имя в чате' defaultValue='Иван'}}
+                        {{{LabeledInput containerClass='profile__data-field input_disabled' type='text' value='Имя в чате' defaultValue='Иван'}}}
                     </li>
                     <li class="profile__data-item">
-                        {{> input containerClass='profile__data-field input_disabled' type='text' value='Телефон' defaultValue='+7 (909) 967 30 30'}}
+                        {{{LabeledInput containerClass='profile__data-field input_disabled' type='text' value='Телефон' defaultValue='+7 (909) 967 30 30'}}}
                     </li>
                 </ul>
                 <ul class="profile__links">
                     <li class="profile__link">
-                        {{> link href='../edit-data/edit-data.hbs' value='Изменить данные'}}
+                        {{{Link href='../edit-data/edit-data.hbs' value='Изменить данные'}}}
                     </li>
                     <li class="profile__link">
-                        {{> link href='../edit-password/edit-password.hbs' value='Изменить пароль'}}
+                        {{{Link href='../edit-password/edit-password.hbs' value='Изменить пароль'}}}
                     </li>
                     <li class="profile__link">
-                        {{> link href='/src/index.hbs' value='Выйти' mod='link_red'}}
+                        {{{Link href='/src/index.hbs' value='Выйти' mod='link_red'}}}
                     </li>
                 </ul>
             </div>
         </div>
-    </main>
-</body>
-</html>
+</main>
