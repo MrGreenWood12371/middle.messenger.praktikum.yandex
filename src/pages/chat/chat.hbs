@@ -1,56 +1,85 @@
 <div class="chat">
-            <div class="chat__list">
-                <div class="chat__list-header">
-                    {{{Link href='/src/pages/profile/profile/profile.hbs' value='Профиль' mod='chat__profile-link' href='#'}}}
-                    {{{SearchInput }}}
-                </div>
-                <div class="chat__list-wrapper">
-                    <ul class="chat__list-items">
-                        {{{ChatItem name='Андрей' author='Вы' value='Изображение' chatDate='10:49' count='2' avatarSrc=chatItemAvatar}}}
-                    </ul>
-                </div>
-            </div>
-            <div class="chat-field">
-                <div class="chat-field__container">
-                    <div class="chat-field__header">
-                        <img alt="Аватар пользователя" class='chat-field__avatar' src="{{avatar}}">
-                        <p class="chat-field__name">Вадим</p>
-                        <button class="chat-field__settings">
-                            <img src="{{settingsImage}}" alt="настройки">
-                        </button>
-                    </div>
-                    <div class="chat-field__content">
-                        <div class="message-group">
-                            <div class="message-group__wrapper">
-                                <time class="message-group__date">19 июня</time>
-                                <p class="message-group__message">
-                                    Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. 
-                                    Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
+  <div class="chat__list">
+    <div class="chat__list-header">
+      {{{Link
+        href="/src/pages/profile/profile/profile.hbs"
+        value="Профиль"
+        mod="chat__profile-link"
+        href="#"
+      }}}
+      {{{SearchInput}}}
+    </div>
+    <div class="chat__list-wrapper">
+      <ul class="chat__list-items">
+        {{{ChatItem
+          name="Андрей"
+          author="Вы"
+          value="Изображение"
+          chatDate="10:49"
+          count="2"
+          avatarSrc=chatItemAvatar
+        }}}
+      </ul>
+    </div>
+  </div>
+  <div class="chat-field">
+    <div class="chat-field__container">
+      <div class="chat-field__header">
+        <img
+          alt="Аватар пользователя"
+          class="chat-field__avatar"
+          src="{{avatar}}"
+        />
+        <p class="chat-field__name">Вадим</p>
+        <button class="chat-field__settings">
+          <img src="{{settingsImage}}" alt="настройки" />
+        </button>
+      </div>
+      <div class="chat-field__content">
+        <div class="message-group">
+          <div class="message-group__wrapper">
+            <time class="message-group__date">19 июня</time>
+            <p class="message-group__message">
+              Привет! Смотри, тут всплыл интересный кусок лунной космической
+              истории — НАСА в какой-то момент попросила Хассельблад
+              адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем
+              что астронавты летали с моделью 500 EL — и к слову говоря, все
+              тушки этих камер все еще находятся на поверхности Луны, так как
+              астронавты с собой забрали только кассеты с пленкой. Хассельблад в
+              итоге адаптировал SWC для космоса, но что-то пошло не так и на
+              ракету они так никогда и не попали. Всего их было произведено 25
+              штук, одну из них недавно продали на аукционе за 45000 евро.
+            </p>
+            <img
+              alt="Фотография camera"
+              class="message-group__message-image"
+              src="{{chatImage}}"
+            />
+            <p class="message-group__message message-group__message_self">
+              Круто!
+              <time class="message-group__message-date">
+                12:00
+              </time>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="chat-field__footer">
+        <form class="chat-field__message-form">
+          <button class="chat-field__attach-button">
+            <img alt="Прикрепить" src="{{attachImage}}" />
+          </button>
 
-                                    Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
-                                </p>
-                                <img alt="Фотография camera" class="message-group__message-image" src="{{chatImage}}">
-                                <p class="message-group__message message-group__message_self">
-                                    Круто!
-                                <time class="message-group__message-date">
-                                    12:00
-                                </time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat-field__footer">
-                        <form class="chat-field__message-form">
-                            <button class="chat-field__attach-button">
-                                <img alt="Прикрепить" src="{{attachImage}}">
-                            </button>
-
-                            <input class="chat-field__message-input" type="text" placeholder="Сообщение">
-                            <button class="chat-field__send-button">
-                                <img alt="отправить" src="{{sendImage}}">
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+          <input
+            class="chat-field__message-input"
+            type="text"
+            placeholder="Сообщение"
+          />
+          <button class="chat-field__send-button">
+            <img alt="отправить" src="{{sendImage}}" />
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

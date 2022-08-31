@@ -1,14 +1,14 @@
 import Block from "../../../utils/Block";
-import template from "./notFound.hbs"
+import template from "./notFound.hbs";
 
 export class NotFound extends Block {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    render() {
-        return this.compile(template, {
-            children: this.children,
-        })
-    }
+  render() {
+    return this.compile(template, {
+      children: this.children,
+    });
+  }
 }

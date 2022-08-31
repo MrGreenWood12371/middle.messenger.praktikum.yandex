@@ -1,19 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import './vars.scss';
-@import './base.scss';
-
-@import '/src/components/button/button.scss';
-@import '/src/components/labeledInput/input.scss';
-@import '/src/components/link/link.scss';
-@import '/src/components/error/error.scss';
-@import '/src/components/chat-item/chat-item.scss';
-@import '/src/components/avatar/avatar.scss';
-@import '/src/components/file-input/file-input.scss';
-@import '/src/components/modal/modal.scss';
-@import '/src/components/search-input/search-input.scss';
-
-@import '/src/pages/auth/index.scss';
-@import '/src/pages/auth/login/login.scss';
-@import '/src/pages/auth/register/register.scss';
-@import '/src/pages/chat/chat.scss';
-@import '/src/pages/profile/index.scss';
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";
+@import "./vars";
+@import "./base";
+@import "/src/components/button/button";
+@import "/src/components/labeledInput/input";
+@import "/src/components/link/link";
+@import "/src/components/error/error";
+@import "/src/components/chat-item/chat-item";
+@import "/src/components/avatar/avatar";
+@import "/src/components/file-input/file-input";
+@import "/src/components/modal/modal";
+@import "/src/components/search-input/search-input";
+@import "/src/pages/auth/index";
+@import "/src/pages/auth/login/login";
+@import "/src/pages/auth/register/register";
+@import "/src/pages/chat/chat";
+@import "/src/pages/profile/index";

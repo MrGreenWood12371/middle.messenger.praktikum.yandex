@@ -1,22 +1,69 @@
 <main class="main-wrapper">
-        <div class="auth register">
-            <form action="" class="auth__form">
-                <h1 class="auth__title">
-                    Регистрация
-                </h1>
-                <div class="auth__fields">
-                    {{{LabeledInput validationType='email' type='email' id='email' value='Почта' containerClass='auth__field'}}}
-                    {{{LabeledInput validationType='login' type='text' id='login' value='Логин' containerClass='auth__field'}}}
-                    {{{LabeledInput validationType='name' type='text' id='first_name' value='Имя' containerClass='auth__field'}}}
-                    {{{LabeledInput validationType='name' type='text' id='second_name' value='Фамилия' containerClass='auth__field'}}}
-                    {{{LabeledInput validationType='phone' type='tel' id='phone' value='Телефон' containerClass='auth__field'}}}
-                    {{{LabeledInput validationType='password' type='password' id='password' value='Пароль' containerClass='auth__field'}}}
-                    {{{LabeledInput validationType='required' type='password' id='repeatPassword' value='Пароль (ещё раз)' containerClass='auth__field'}}}
-                </div>
-                <div class="auth__buttons register__buttons">
-                    {{{Button onClick=onClick type='submit' label='Зарегистрироваться' mod='button_primary auth__button'}}}
-                    {{{Link value='Войти' href='../login/login.hbs'}}}
-                </div>
-            </form>
-        </div>
+  <div class="auth register">
+    <form action="" class="auth__form">
+      <h1 class="auth__title">
+        Регистрация
+      </h1>
+      <div class="auth__fields">
+        {{{LabeledInput
+          validationType="email"
+          type="email"
+          id="email"
+          value="Почта"
+          containerClass="auth__field"
+        }}}
+        {{{LabeledInput
+          validationType="login"
+          type="text"
+          id="login"
+          value="Логин"
+          containerClass="auth__field"
+        }}}
+        {{{LabeledInput
+          validationType="name"
+          type="text"
+          id="first_name"
+          value="Имя"
+          containerClass="auth__field"
+        }}}
+        {{{LabeledInput
+          validationType="name"
+          type="text"
+          id="second_name"
+          value="Фамилия"
+          containerClass="auth__field"
+        }}}
+        {{{LabeledInput
+          validationType="phone"
+          type="tel"
+          id="phone"
+          value="Телефон"
+          containerClass="auth__field"
+        }}}
+        {{{LabeledInput
+          validationType="password"
+          type="password"
+          id="password"
+          value="Пароль"
+          containerClass="auth__field"
+        }}}
+        {{{LabeledInput
+          validationType="required"
+          type="password"
+          id="repeatPassword"
+          value="Пароль (ещё раз)"
+          containerClass="auth__field"
+        }}}
+      </div>
+      <div class="auth__buttons register__buttons">
+        {{{Button
+          onClick=onClick
+          type="submit"
+          label="Зарегистрироваться"
+          mod="button_primary auth__button"
+        }}}
+        {{{Link value="Войти" href="../login/login.hbs"}}}
+      </div>
+    </form>
+  </div>
 </main>

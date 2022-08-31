@@ -1,39 +1,34 @@
 .input {
-    &__label {
-        font-size: 9px;
-        line-height: 9px;
+  &__label {
+    font-size: 9px;
+    line-height: 9px;
+    color: $label-color;
+  }
 
-        color: $label-color;
+  &__field {
+    width: 100%;
+    height: 20px;
+    font-size: 13px;
+    line-height: 13px;
+    color: $main-color;
+    border: 0;
+    border-bottom: 1px solid $primary-color;
+
+    &_error {
+      color: $warning-color;
     }
+  }
 
-    &__field {
-        width: 100%;
-	    height: 20px;
+  &_disabled {
+    pointer-events: none;
+  }
 
-	    font-size: 13px;
-	    line-height: 13px;
+  &__error-message {
+    $size: 8px;
 
-	    color: $main-color;
-        border: 0;
-	    border-bottom: 1px solid $primary-color;
-
-        &_error {
-            color: $warning-color;
-        }
-    }
-
-    &_disabled {
-        pointer-events: none;
-    }
-
-    &__error-message {
-        $size: 8px;
-
-        font-size: $size;
-        line-height: $size;
-
-        margin-top: 7px;
-
-        color: $warning-color;
-    }
+    font-size: $size;
+    line-height: $size;
+    margin-top: 7px;
+    color: $warning-color;
+  }
 }

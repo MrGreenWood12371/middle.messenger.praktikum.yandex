@@ -1,34 +1,36 @@
 <main class="main-wrapper">
-        <div class="auth login">
-            <form action="" class="auth__form">
-                <h1 class="auth__title">
-                Вход
-                </h1>
-                <div class="auth__fields">
-                    {{{
-                        LabeledInput
-                        validationType='login' 
-                        type='text' 
-                        id='login' 
-                        defaultValue='vanya' 
-                        value='Войти' 
-                        containerClass='auth__field' 
-                        error-message='Неверный логин'
-                    }}}
-                    {{{
-                        LabeledInput
-                        validationType='password'
-                        defaultValue='vAnOVanya'
-                        type='password' 
-                        id='password' 
-                        value='Пароль' 
-                        containerClass='auth__field'
-                    }}}
-                </div>
-                <div class="auth__buttons">
-                    {{{Button onClick=onClick type='submit' label='Войти'mod='button_primary auth__button'}}}
-                    {{{Link value='Нет аккаунта?' href='../register/register.hbs'}}}
-                </div>
-            </form>
-        </div>
+  <div class="auth login">
+    <form action="" class="auth__form">
+      <h1 class="auth__title">
+        Вход
+      </h1>
+      <div class="auth__fields">
+        {{{LabeledInput
+          validationType="login"
+          type="text"
+          id="login"
+          defaultValue="vanya"
+          value="Войти"
+          containerClass="auth__field"
+        }}}
+        {{{LabeledInput
+          validationType="password"
+          defaultValue="vAnOVanya"
+          type="password"
+          id="password"
+          value="Пароль"
+          containerClass="auth__field"
+        }}}
+      </div>
+      <div class="auth__buttons">
+        {{{Button
+          onClick=onClick
+          type="submit"
+          label="Войти"
+          mod="button_primary auth__button"
+        }}}
+        {{{Link value="Нет аккаунта?" href="../register/register.hbs"}}}
+      </div>
+    </form>
+  </div>
 </main>
