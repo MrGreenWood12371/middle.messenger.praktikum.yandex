@@ -1,45 +1,39 @@
 .modal {
-    &__content {
-        display: flex;
-        flex-direction: column;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 14%);
+  }
 
-        width: 340px;
-        padding: 40px 30px;
+  &__title {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 43px;
+  }
 
-        text-align: center;
+  & .file-input {
+    width: 122px;
+    margin: 0 auto 45px;
+  }
 
-        border-radius: 12px;
-        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
-    }
+  &__error-message {
+    $size: 11px;
 
-    &__title {
-        font-size: 15px;
-        line-height: 20px;
+    font-size: $size;
+    line-height: $size;
+    margin-top: 14px;
+    color: $warning-color;
+  }
 
-        margin-bottom: 43px;
-    }
+  &_error {
+    color: $warning-color;
+  }
 
-    & .file-input {
-        width: 122px;
-        margin: 0 auto 45px;
-    }
-
-    &__error-message {
-        $size: 11px;
-
-        font-size: $size;
-        line-height: $size;
-
-        margin-top: 14px;
-
-        color: $warning-color;
-    }
-
-    &_error {
-        color: $warning-color;
-    }
-
-    & .input {
-        margin-bottom: 45px;
-    }
+  & .input {
+    margin-bottom: 45px;
+  }
 }

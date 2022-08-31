@@ -1,47 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yandex.middle.chat</title>
-    <link rel="stylesheet" href="../../../style/index.scss" />
-</head>
-<body>
-    <main class="main-wrapper">
-        <div class="profile">
-            <nav class="profile__nav">
-                <a href="/src/pages/profile/profile/profile.hbs" class="profile__nav-link">
-                    <img src="/static/nav-previous.svg" class="profile__nav-link-image">
-                </a>
-            </nav>
-            <div class="profile__main">
-                <form class="profile__form" action="post">
-                    {{> avatar image-src='/static/profile-placeholder.svg'}}
-                    <ul class="profile__data-list">
-                        <li class="profile__data-item">
-                            {{> input containerClass='profile__data-field'id='email' type='email' value='Почта' defaultValue='pochta@yandex.ru'}}
-                        </li>
-                        <li class="profile__data-item">
-                            {{> input containerClass='profile__data-field'id='login' type='text' value='Логин' defaultValue='ivanivanov'}}
-                        </li>
-                        <li class="profile__data-item">
-                            {{> input containerClass='profile__data-field' id='first_name' type='text' value='Имя' defaultValue='Иван'}}
-                        </li>
-                        <li class="profile__data-item">
-                            {{> input containerClass='profile__data-field' id='second_name' type='text' value='Фамилия' defaultValue='Иванов'}}
-                        </li>
-                        <li class="profile__data-item">
-                            {{> input containerClass='profile__data-field' id='display_name' type='text' value='Имя в чате' defaultValue='Иван'}}
-                        </li>
-                        <li class="profile__data-item">
-                            {{> input containerClass='profile__data-field' id='phone' type='tel' value='Телефон' defaultValue='+7 (909) 967 30 30'}}
-                        </li>
-                    </ul>
-                    {{> button type='submit' mod='button_primary profile__data-save-button' label='Сохранить'}}
-                </form>
-            </div>
-        </div>
-    </main>
-</body>
-</html>
+<main class="main-wrapper">
+  <div class="profile">
+    <nav class="profile__nav">
+      <a
+        href="/src/pages/profile/profile/profile.hbs"
+        class="profile__nav-link"
+      >
+        <img
+          alt="назад"
+          src={{prevButtonImage}}
+          class="profile__nav-link-image"
+        />
+      </a>
+    </nav>
+    <div class="profile__main">
+      <form class="profile__form" action="post">
+        {{{Avatar imageSrc=profileImage}}}
+        <ul class="profile__data-list">
+          <li class="profile__data-item">
+            {{{LabeledInput
+              containerClass="profile__data-field"
+              validationType="email"
+              id="email"
+              type="email"
+              value="Почта"
+              defaultValue="pochta@yandex.ru"
+            }}}
+          </li>
+          <li class="profile__data-item">
+            {{{LabeledInput
+              validationType="login"
+              containerClass="profile__data-field"
+              id="login"
+              type="text"
+              value="Логин"
+              defaultValue="ivanivanov"
+            }}}
+          </li>
+          <li class="profile__data-item">
+            {{{LabeledInput
+              validationType="name"
+              containerClass="profile__data-field"
+              id="first_name"
+              type="text"
+              value="Имя"
+              defaultValue="Иван"
+            }}}
+          </li>
+          <li class="profile__data-item">
+            {{{LabeledInput
+              validationType="name"
+              containerClass="profile__data-field"
+              id="second_name"
+              type="text"
+              value="Фамилия"
+              defaultValue="Иванов"
+            }}}
+          </li>
+          <li class="profile__data-item">
+            {{{LabeledInput
+              validationType="required"
+              containerClass="profile__data-field"
+              id="display_name"
+              type="text"
+              value="Имя в чате"
+              defaultValue="Иван"
+            }}}
+          </li>
+          <li class="profile__data-item">
+            {{{LabeledInput
+              validationType="phone"
+              containerClass="profile__data-field"
+              id="phone"
+              type="tel"
+              value="Телефон"
+              defaultValue="+7 (909) 967 30 30"
+            }}}
+          </li>
+        </ul>
+        {{{Button
+          type="submit"
+          mod="button_primary profile__data-save-button"
+          label="Сохранить"
+          onClick=onClick
+        }}}
+      </form>
+    </div>
+  </div>
+</main>

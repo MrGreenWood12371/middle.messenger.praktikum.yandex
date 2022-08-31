@@ -1,19 +1,17 @@
 .button {
-    width: 100%;
-    padding: 12px;
-    
-    border: 0;
-    background-color: transparent;
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
 
-    cursor: pointer;
+  &_primary {
+    background-color: $primary-color;
+    border-radius: $border-radius-button;
+    color: $white-color;
+  }
 
-    &_primary {
-        background-color: $primary-color;
-        border-radius: $border-radius-button;
-        color: $white-color;
-    }
-
-    &:hover {
-        opacity: .9;
-    }
+  &:hover {
+    opacity: 0.9;
+  }
 }

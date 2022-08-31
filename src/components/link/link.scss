@@ -1,13 +1,12 @@
 .link {
-    $size: 11px;
+  $size: 11px;
 
-    font-size: $size;
-    line-height: $size;
+  font-size: $size;
+  line-height: $size;
+  color: $primary-color;
+  text-decoration: none;
 
-    color: $primary-color;
-    text-decoration: none;
-
-    &_red {
-        color: $warning-color;
-    }
+  &_red {
+    color: $warning-color;
+  }
 }
