@@ -5,9 +5,9 @@
 
 Проект на Netlify: https://lambent-longma-6b25a0.netlify.app/
 
+В проекте используются styleling, eslint, TypeScript.
+
 Команда для сборки проекта: npm run build
 Команда для запуска проекта при разработке: npm run dev
 Команда для запуска проекта: npm start
-
-sprint 1 PR: https://github.com/MrGreenWood12371/middle.messenger.praktikum.yandex/pull/1
-
+Команда проверки стилей: npm run styleling
