@@ -1,4 +1,7 @@
+import { SigninData } from "../../../api/AuthAPI";
+import AuthController from "../../../controllers/AuthController";
 import Block from "../../../utils/Block";
+import store from "../../../utils/Store";
 import Validator from "../../../utils/Validator";
 import template from "./login.hbs";
 
@@ -31,11 +34,13 @@ export class Login extends Block {
     Array.from(fields).forEach((el: HTMLInputElement) => {
       data[el.name] = el.value;
     });
-    console.log(data);
+
+    AuthController.signin(data as unknown as SigninData);
   }
 
   render() {
     return this.compile(template, {
+      ...this.props,
       children: this.children,
       onClick: this.props.onClick,
     });

@@ -1,7 +1,40 @@
 .avatar {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &--edit {
+
+    &:hover {
+      & .avatar__change-text {
+        display: block;
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background-color: rgba($color: #000, $alpha: .7);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__change-text {
+    display: none;
+    font-size: 13px;
+    line-height: 14px;
+    width: 65px;
+    position: absolute;
+    top: 35%;
+    text-align: center;
+    left: 35px;
+    color: $white-color;
+    z-index: 1;
+    cursor: pointer;
+  }
 
   &__image {
     $size: 130px;
@@ -9,6 +42,7 @@
     position: relative;
     width: $size;
     height: $size;
+    object-fit: cover;
     margin-bottom: 21px;
     border-radius: 50%;
   }

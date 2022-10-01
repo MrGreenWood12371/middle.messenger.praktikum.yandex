@@ -4,11 +4,17 @@ import template from "./avatar.hbs";
 interface AvatarProps {
   name?: string;
   imageSrc: string
+  cb?: () => void
 }
 export class Avatar extends Block {
   constructor(props: AvatarProps) {
     super({
       ...props,
+      events: {
+        click: () => {
+          this.props.cb && this.props.cb()
+        },
+      },
     });
   }
 
@@ -17,6 +23,7 @@ export class Avatar extends Block {
       children: this.children,
       name: this.props.name,
       imageSrc: this.props.imageSrc,
+      mod: this.props.mod,
     });
   }
 }

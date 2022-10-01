@@ -1,0 +1,10 @@
+<div class="modal">
+  <div class="modal__content">
+    <h3 class="modal__title {{titleClass}}">{{title}}</h3>
+    {{{LabeledInput type='text' id='title' value='Введите название чата'}}}
+    {{{Button mod="button_primary" label="Создать" onClick=onCreate}}}
+    <br>
+    {{{Button mod="button_primary" label="Закрыть" onClick=onClose}}}
+    <p class="modal__error-message">{{errorMessage}}</p>
+  </div>
+</div>

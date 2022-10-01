@@ -3,8 +3,10 @@ import template from "./edit-password.hbs";
 import prevButtonImage from "../../../../static/nav-previous.svg";
 import profileImage from "../../../../static/profile-placeholder.svg";
 import Validator from "../../../utils/Validator";
+import UserController from "../../../controllers/UserController";
+import { withStore } from "../../../utils/Store";
 
-export class EditPassword extends Block {
+export class EditPasswordBasePage extends Block {
   constructor() {
     super();
     this.setProps({
@@ -33,11 +35,13 @@ export class EditPassword extends Block {
     Array.from(fields).forEach((el: HTMLInputElement) => {
       data[el.name] = el.value;
     });
-    console.log(data);
+
+    UserController.changePassword(data as any);
   }
 
   render() {
     return this.compile(template, {
+      ...this.props,
       children: this.children,
       prevButtonImage: prevButtonImage,
       profileImage: profileImage,
@@ -45,3 +49,7 @@ export class EditPassword extends Block {
     });
   }
 }
+
+const withUser = withStore((state) => ({ ...state.user }))
+
+export const EditPassword = withUser(EditPasswordBasePage);

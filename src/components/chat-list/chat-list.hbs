@@ -1,0 +1,14 @@
+<ul class="chat__list-items">
+  {{#each list}}
+    {{{ChatItem
+      name=title
+      onClick=../onSelectChat
+      id=id
+      author=last_message/user/display_name
+      value=last_message/content
+      chatDate=last_message/time
+      count=unread_count
+      avatarSrc=avatar
+    }}}
+  {{/each}}
+</ul>

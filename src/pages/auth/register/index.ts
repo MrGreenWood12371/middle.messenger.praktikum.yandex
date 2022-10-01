@@ -1,3 +1,5 @@
+import { SignupData } from "../../../api/AuthAPI";
+import AuthController from "../../../controllers/AuthController";
 import Block from "../../../utils/Block";
 import Validator from "../../../utils/Validator";
 import template from "./register.hbs";
@@ -31,7 +33,7 @@ export class Register extends Block {
       data[el.name] = el.value;
     });
 
-    console.log(data);
+    AuthController.signup(data as unknown as SignupData);
   }
 
   render() {
