@@ -16,6 +16,12 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 15px;
+
+      &-controls {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
     }
 
     &-wrapper {
@@ -24,10 +30,34 @@
     }
   }
 
+  &__create-button {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    transition: all .3s;
+
+    &:hover  {
+      opacity: .7;
+    }
+
+    &::before, &::after {
+      position: absolute;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background-color: $primary-color;
+    }
+
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+
   &__profile-link {
     position: relative;
     margin-left: auto;
-    margin-bottom: 25px;
     padding-right: 16px;
     color: $label-color;
 
@@ -65,6 +95,7 @@
     }
 
     &__header {
+      position: relative;
       display: flex;
       align-items: center;
       width: 100%;
@@ -90,6 +121,11 @@
 
     &__settings {
       display: flex;
+      width: 25px;
+      height: 25px;
+      background-image: url('../../static/settings.svg');
+      background-repeat: no-repeat;
+      background-position: center;
       margin-right: 10px;
       margin-left: auto;
       background-color: transparent;
@@ -97,8 +133,31 @@
       cursor: pointer;
     }
 
+    &__popover {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 65px;
+      right: 0;
+      padding: 15px;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+
+      &-button {
+        width: max-content;
+        margin-bottom: 16px;
+        padding: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
     &__content {
-      padding-bottom: 30px;
+      padding-top: 5px;
+      padding-bottom: 25px;
       overflow-y: auto;
     }
 
@@ -137,12 +196,14 @@
     &__send-button {
       $size: 28px;
 
+      flex-shrink: 0;
       width: $size;
       height: $size;
       padding: 0;
       background-color: transparent;
       border: 0;
       cursor: pointer;
+      background-image: url('../../static/send.svg');
     }
   }
 }
@@ -169,6 +230,7 @@
     font-size: 12px;
     line-height: 15px;
     max-width: 402px;
+    width: max-content;
     margin-bottom: 11px;
     padding: 11px;
     background-color: $background-color;

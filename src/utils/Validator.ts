@@ -63,12 +63,12 @@ const Validator = {
     if (!isValid) {
       inputField.classList.add("input__field_error");
       errorField.textContent = message;
-      return;
+      return true;
     }
 
     inputField.classList.remove("input__field_error");
     errorField.textContent = "";
-    return;
+    return false;
   },
 };
 

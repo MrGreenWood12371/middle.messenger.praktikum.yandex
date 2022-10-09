@@ -1,23 +1,17 @@
 <main class="main-wrapper">
   <div class="profile">
     <nav class="profile__nav">
-      <a href="/src/pages/chat/chat.hbs" class="profile__nav-link">
-        <img
-          alt="назад"
-          src="{{prevButtonImage}}"
-          class="profile__nav-link-image"
-        />
-      </a>
+      {{{Link to='/chats' mod="profile__nav-link"}}}
     </nav>
     <div class="profile__main">
-      {{{Avatar imageSrc=profileImage name="Иван"}}}
+      {{{Avatar imageSrc=avatar name="Иван"}}}
       <ul class="profile__data-list">
         <li class="profile__data-item">
           {{{LabeledInput
             containerClass="profile__data-field input_disabled"
             type="text"
             value="Почта"
-            defaultValue="pochta@yandex.ru"
+            defaultValue=email
           }}}
         </li>
         <li class="profile__data-item">
@@ -25,7 +19,7 @@
             containerClass="profile__data-field input_disabled"
             type="text"
             value="Логин"
-            defaultValue="ivanivanov"
+            defaultValue=login
           }}}
         </li>
         <li class="profile__data-item">
@@ -33,7 +27,7 @@
             containerClass="profile__data-field input_disabled"
             type="text"
             value="Имя"
-            defaultValue="Иван"
+            defaultValue=first_name
           }}}
         </li>
         <li class="profile__data-item">
@@ -41,7 +35,7 @@
             containerClass="profile__data-field input_disabled"
             type="text"
             value="Фамилия"
-            defaultValue="Иванов"
+            defaultValue=second_name
           }}}
         </li>
         <li class="profile__data-item">
@@ -49,7 +43,7 @@
             containerClass="profile__data-field input_disabled"
             type="text"
             value="Имя в чате"
-            defaultValue="Иван"
+            defaultValue=display_name
           }}}
         </li>
         <li class="profile__data-item">
@@ -57,22 +51,22 @@
             containerClass="profile__data-field input_disabled"
             type="text"
             value="Телефон"
-            defaultValue="+7 (909) 967 30 30"
+            defaultValue=phone
           }}}
         </li>
       </ul>
       <ul class="profile__links">
         <li class="profile__link">
-          {{{Link href="../edit-data/edit-data.hbs" value="Изменить данные"}}}
+          {{{Link to="/profile/editData" value="Изменить данные"}}}
         </li>
         <li class="profile__link">
           {{{Link
-            href="../edit-password/edit-password.hbs"
+            to="/profile/editPassword"
             value="Изменить пароль"
           }}}
         </li>
         <li class="profile__link">
-          {{{Link href="/src/index.hbs" value="Выйти" mod="link_red"}}}
+          {{{Link onClick=onLogout value="Выйти" mod="link_red"}}}
         </li>
       </ul>
     </div>

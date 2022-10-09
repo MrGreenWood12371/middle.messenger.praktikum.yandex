@@ -1,8 +1,10 @@
 <div class="modal">
   <div class="modal__content">
     <h3 class="modal__title {{titleClass}}">{{title}}</h3>
-    {{{FileInput id="avatar" value="Выбрать файл на компьютере"}}}
-    {{{Button mod="button_primary" label="Поменять"}}}
+    <form action="">
+      {{{FileInput id="avatar" value="Выбрать файл на компьютере"}}}
+      {{{Button onClick=onClick mod="button_primary" label="Поменять"}}}
+    </form>
     <p class="modal__error-message">{{errorMessage}}</p>
   </div>
 </div>

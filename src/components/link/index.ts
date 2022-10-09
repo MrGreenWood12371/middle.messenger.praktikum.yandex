@@ -1,30 +1,36 @@
+import { withRouter } from "../../hocs/withRouter";
 import Block from "../../utils/Block";
 import template from "./link.hbs";
 
 interface LinkProps {
   value: string;
-  href: string;
+  to: string;
   mod?: string;
   onClick?: () => void;
 }
 
-export class Link extends Block {
+class BaseLink extends Block {
   constructor(props: LinkProps) {
     super({
-      value: props.value,
-      href: props.href,
-      mod: props.mod,
+      ...props,
       events: {
-        click: props.onClick,
+        click: props.onClick ? props.onClick  : () => this.navigate(),
       },
     });
   }
 
+  navigate() {
+    if (!this.props.router){
+      return
+    }
+    this.props.router.go(this.props.to);
+  }
+
   render() {
     return this.compile(template, {
-      value: this.props.value,
-      href: this.props.href,
-      mod: this.props.mod,
+      ...this.props,
     });
   }
 }
+
+export const Link = withRouter(BaseLink);

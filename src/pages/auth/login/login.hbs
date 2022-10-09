@@ -9,13 +9,11 @@
           validationType="login"
           type="text"
           id="login"
-          defaultValue="vanya"
           value="Войти"
           containerClass="auth__field"
         }}}
         {{{LabeledInput
           validationType="password"
-          defaultValue="vAnOVanya"
           type="password"
           id="password"
           value="Пароль"
@@ -29,8 +27,13 @@
           label="Войти"
           mod="button_primary auth__button"
         }}}
-        {{{Link value="Нет аккаунта?" href="../register/register.hbs"}}}
+        {{{Link value="Нет аккаунта?" to="/register"}}}
       </div>
     </form>
   </div>
+  {{#if error}}
+      {{{ErrorModal
+          errorMessage=error
+      }}}
+    {{/if}}
 </main>

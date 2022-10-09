@@ -6,6 +6,8 @@
   color: $primary-color;
   text-decoration: none;
 
+  cursor: pointer;
+
   &_red {
     color: $warning-color;
   }

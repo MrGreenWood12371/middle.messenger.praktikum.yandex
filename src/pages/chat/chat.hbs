@@ -1,68 +1,44 @@
 <div class="chat">
   <div class="chat__list">
     <div class="chat__list-header">
-      {{{Link
-        href="/src/pages/profile/profile/profile.hbs"
-        value="Профиль"
-        mod="chat__profile-link"
-        href="#"
-      }}}
+      <div class="chat__list-header-controls">
+        {{{Button mod="chat__create-button" onClick=onCreateButtonClick}}}
+        {{{Link value="Профиль" mod="chat__profile-link" to="/profile"}}}
+      </div>
       {{{SearchInput}}}
     </div>
     <div class="chat__list-wrapper">
-      <ul class="chat__list-items">
-        {{{ChatItem
-          name="Андрей"
-          author="Вы"
-          value="Изображение"
-          chatDate="10:49"
-          count="2"
-          avatarSrc=chatItemAvatar
-        }}}
-      </ul>
+      {{{ChatList}}}
     </div>
   </div>
   <div class="chat-field">
     <div class="chat-field__container">
+      {{#if chatTitle}}
       <div class="chat-field__header">
         <img
           alt="Аватар пользователя"
           class="chat-field__avatar"
           src="{{avatar}}"
         />
-        <p class="chat-field__name">Вадим</p>
-        <button class="chat-field__settings">
-          <img src="{{settingsImage}}" alt="настройки" />
-        </button>
+        <p class="chat-field__name">{{chatTitle}}</p>
+        {{{Button onClick=onSettingsClick mod='chat-field__settings'}}}
+        {{#if isSettingsOpen}}
+            <div class="chat-field__popover">
+                {{{Button onClick=onAddUserClick mod='chat-field__popover-button' label='Добавить пользователя'}}}
+                {{{Button onClick=onDeleteUserClick mod='chat-field__popover-button' label='Удалить пользователя'}}}
+            </div>
+        {{/if}}
       </div>
       <div class="chat-field__content">
         <div class="message-group">
-          <div class="message-group__wrapper">
-            <time class="message-group__date">19 июня</time>
-            <p class="message-group__message">
-              Привет! Смотри, тут всплыл интересный кусок лунной космической
-              истории — НАСА в какой-то момент попросила Хассельблад
-              адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем
-              что астронавты летали с моделью 500 EL — и к слову говоря, все
-              тушки этих камер все еще находятся на поверхности Луны, так как
-              астронавты с собой забрали только кассеты с пленкой. Хассельблад в
-              итоге адаптировал SWC для космоса, но что-то пошло не так и на
-              ракету они так никогда и не попали. Всего их было произведено 25
-              штук, одну из них недавно продали на аукционе за 45000 евро.
-            </p>
-            <img
-              alt="Фотография camera"
-              class="message-group__message-image"
-              src="{{chatImage}}"
-            />
-            <p class="message-group__message message-group__message_self">
-              Круто!
-              <time class="message-group__message-date">
-                12:00
-              </time>
-            </p>
-          </div>
+            {{{Messages}}}
         </div>
+        {{#if addUserModalIsOpen}}
+          {{{UserModal cb=onAddUser title='Добавить пользователя'}}}
+        {{/if}}
+        {{#if deleteUserModalIsOpen}}
+          {{{UserModal cb=onDeleteUser title='Удалить пользователя'}}}
+        {{/if}}
       </div>
       <div class="chat-field__footer">
         <form class="chat-field__message-form">
@@ -75,11 +51,15 @@
             type="text"
             placeholder="Сообщение"
           />
-          <button class="chat-field__send-button">
-            <img alt="отправить" src="{{sendImage}}" />
-          </button>
+          {{{Button onClick=onSendMessage mod='button_primary chat-field__send-button'}}}
         </form>
       </div>
+        {{else}}
+          Выберите  чат
+        {{/if}}
     </div>
   </div>
+  {{#if createModalIsOpen}}
+    {{{ErrorModal cb=createChat}}}
+  {{/if}}
 </div>
