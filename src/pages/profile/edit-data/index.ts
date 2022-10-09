@@ -9,7 +9,7 @@ import UserController from "../../../controllers/UserController";
 
 export class EditDataBasePage extends Block {
   constructor() {
-    super();
+    super({});
     this.setProps({
       onClick: this._onChangeData.bind(this),
       openModal: this._onAvatarChangeClick.bind(this),

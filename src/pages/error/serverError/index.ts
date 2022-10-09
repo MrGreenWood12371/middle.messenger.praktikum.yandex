@@ -3,7 +3,7 @@ import template from "./serverError.hbs";
 
 export class ServerError extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   render() {

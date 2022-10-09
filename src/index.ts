@@ -21,6 +21,7 @@ import { EditPassword } from "./pages/profile/edit-password";
 import { ChatPage } from "./pages/chat";
 import { Messages } from "./components/messages";
 import { ChatList } from "./components/chat-list";
+import './style/index.scss';
 
 registerComponent("Input", Input as any);
 registerComponent("Button", Button as any);

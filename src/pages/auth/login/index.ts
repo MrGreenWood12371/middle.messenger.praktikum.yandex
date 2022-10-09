@@ -1,13 +1,12 @@
 import { SigninData } from "../../../api/AuthAPI";
 import AuthController from "../../../controllers/AuthController";
 import Block from "../../../utils/Block";
-import store from "../../../utils/Store";
 import Validator from "../../../utils/Validator";
-import template from "./login.hbs";
+import template  from "./login.hbs";
 
 export class Login extends Block {
   constructor() {
-    super();
+    super({});
     this.setProps({
       onClick: this._onLogin.bind(this),
     });

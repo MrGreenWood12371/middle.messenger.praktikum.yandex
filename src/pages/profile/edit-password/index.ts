@@ -8,7 +8,7 @@ import { withStore } from "../../../utils/Store";
 
 export class EditPasswordBasePage extends Block {
   constructor() {
-    super();
+    super({});
     this.setProps({
       onClick: this._onChangePass.bind(this),
     });

@@ -118,9 +118,10 @@ export class ChatBasePage extends Block {
     })
   }
 
-  private _onAddUser(e: Event, modal) {
-    const input = modal.querySelector('.input')
-    const inputField = input.querySelector('input')
+  private _onAddUser(e: Event, modal: HTMLElement) {
+    e.stopPropagation();
+    const input: HTMLElement = modal.querySelector('.input') as HTMLElement
+    const inputField: HTMLInputElement = input.querySelector('input') as HTMLInputElement
 
     const userName: string = inputField.value
     if (Validator.validate(input, 'required')){
@@ -129,9 +130,10 @@ export class ChatBasePage extends Block {
     ChatsController.addUser(userName, store.getState().chat.selectedChat.info.id)
   }
 
-  private _onDeleteUser(e: Event, modal) {
-    const input = modal.querySelector('.input')
-    const inputField = input.querySelector('input')
+  private _onDeleteUser(e: Event, modal: HTMLElement) {
+    e.stopPropagation();
+    const input: HTMLElement = modal.querySelector('.input') as HTMLElement
+    const inputField: HTMLInputElement = input.querySelector('input') as HTMLInputElement
 
     const userName: string = inputField.value
 

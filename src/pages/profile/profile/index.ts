@@ -7,7 +7,7 @@ import AuthController from "../../../controllers/AuthController";
 class ProfileBasePage extends Block {
 
   constructor() {
-    super()
+    super({})
 
     this.setProps({
       onLogout: this._onLogout.bind(this),
@@ -20,6 +20,7 @@ class ProfileBasePage extends Block {
 
   init(): void {
     AuthController.fetchUser();
+    console.log(this.children);
 
   }
 

@@ -1,15 +1,20 @@
 import { withRouter } from "../../hocs/withRouter";
 import Block from "../../utils/Block";
 import template from "./link.hbs";
+import Router from '../../utils/Router';
 
 interface LinkProps {
   value: string;
   to: string;
+  router: typeof Router;
   mod?: string;
   onClick?: () => void;
+  events?: {
+    click: () => void;
+  };
 }
 
-class BaseLink extends Block {
+class BaseLink extends Block<LinkProps> {
   constructor(props: LinkProps) {
     super({
       ...props,
@@ -20,9 +25,6 @@ class BaseLink extends Block {
   }
 
   navigate() {
-    if (!this.props.router){
-      return
-    }
     this.props.router.go(this.props.to);
   }
 
@@ -33,4 +35,4 @@ class BaseLink extends Block {
   }
 }
 
-export const Link = withRouter(BaseLink);
+export const Link = withRouter(BaseLink as typeof Block);

@@ -1,5 +1,5 @@
 import Block from "../../utils/Block";
-import store, { withStore } from "../../utils/Store";
+import { withStore } from "../../utils/Store";
 import template from "./messages.hbs";
 
 export class MessagesBase extends Block {
