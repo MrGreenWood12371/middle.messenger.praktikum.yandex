@@ -3,7 +3,7 @@ import template from "./search-input.hbs";
 
 export class SearchInput extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   render() {

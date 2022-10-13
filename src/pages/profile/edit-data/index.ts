@@ -6,10 +6,11 @@ import Validator from "../../../utils/Validator";
 import { withStore } from "../../../utils/Store";
 import AuthController from "../../../controllers/AuthController";
 import UserController from "../../../controllers/UserController";
+import { ChangeProfileData } from "../../../api/UserAPI";
 
 export class EditDataBasePage extends Block {
   constructor() {
-    super();
+    super({});
     this.setProps({
       onClick: this._onChangeData.bind(this),
       openModal: this._onAvatarChangeClick.bind(this),
@@ -44,7 +45,7 @@ export class EditDataBasePage extends Block {
       data[el.name] = el.value;
     });
 
-    UserController.changeProfile(data);
+    UserController.changeProfile(data as ChangeProfileData);
   }
 
   private _onAvatarChangeClick() {

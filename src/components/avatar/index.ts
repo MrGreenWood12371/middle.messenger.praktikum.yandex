@@ -12,7 +12,7 @@ export class Avatar extends Block {
       ...props,
       events: {
         click: () => {
-          this.props.cb && this.props.cb()
+          this.props.cb && typeof this.props.cb === 'function'  && this.props.cb()
         },
       },
     });

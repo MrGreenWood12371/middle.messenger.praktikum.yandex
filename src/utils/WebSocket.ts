@@ -31,7 +31,12 @@ export default class Socket {
     });
 
     this._socket.addEventListener('message', (event: MessageEvent) => {
-      const data = JSON.parse(event.data);
+      let data = event.data;
+      try {
+        data = JSON.parse(data)
+      } catch (error) {
+        console.error(error)
+      }
       if (data
         && data.type !== 'error'
         && data.type !== 'pong'

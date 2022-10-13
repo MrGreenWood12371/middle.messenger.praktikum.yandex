@@ -17,7 +17,7 @@ export class UserModal extends Block {
   }
 
   onClick(e: Event) {
-    this.props.cb && this.props.cb(e, this.getContent())
+    this.props.cb && typeof this.props.cb ==='function' && this.props.cb(e, this.getContent())
   }
 
   render() {

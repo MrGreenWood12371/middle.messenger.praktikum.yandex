@@ -3,7 +3,7 @@ import template from "./notFound.hbs";
 
 export class NotFound extends Block {
   constructor() {
-    super();
+    super({});
   }
 
   render() {

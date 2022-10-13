@@ -1,6 +1,5 @@
+import HTTPTransport from "../utils/HTTPTransport";
 import { User } from "./AuthAPI";
-import BaseAPI from "./BaseAPI";
-
 export interface ChatData {
   id: number;
   title: string;
@@ -13,9 +12,11 @@ export interface ChatData {
   };
 }
 
-export class ChatAPI extends BaseAPI {
+export class ChatAPI {
+  protected http: HTTPTransport;
+
   constructor() {
-    super("/chats");
+    this.http = new HTTPTransport('/chats');
   }
 
   public getChat(): Promise<ChatData> {
@@ -33,7 +34,9 @@ export class ChatAPI extends BaseAPI {
     });
   }
 
-  public getToken(id: number) {
+  public getToken(id: number): Promise<{
+    token: string
+  }[]> {
     return this.http.post(`/token/${id}`, {});
   }
 
@@ -43,10 +46,6 @@ export class ChatAPI extends BaseAPI {
       chatId: chatId
     });
   }
-
-  delete = undefined;
-  update = undefined;
-  read = undefined;
 }
 
 export default new ChatAPI();
