@@ -10,7 +10,7 @@
     "stylelint": "npx stylelint '**/*.scss'",
     "test": "mocha --require ts-node/register --require ./mochaSetup.js './src/**/*.test.ts'",
     "validate": "npm-run-all --parallel test lint",
-    "precommit": "npm run validate"
+    "prepare": "husky install && chmod ug+x .husky/*"
   },
   "devDependencies": {
     "@anikin/parcel-transformer-handlebars": "^1.0.9",
