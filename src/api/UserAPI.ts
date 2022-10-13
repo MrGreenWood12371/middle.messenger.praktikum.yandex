@@ -1,4 +1,4 @@
-import BaseAPI from './BaseAPI';
+import HTTPTransport from '../utils/HTTPTransport';
 
 interface User {
   id: number;
@@ -11,17 +11,21 @@ interface User {
   avatar: string;
 }
 
+export type ChangeProfileData = Omit<User, 'avatar' | 'id'>
+
 export interface PasswordToChange {
   oldPassword: string;
   newPassword: string;
 }
 
-export class UserApi extends BaseAPI {
+export class UserApi {
+  protected http: HTTPTransport;
+
   constructor() {
-    super('/user');
+    this.http = new HTTPTransport('/user');
   }
 
-  public changeProfile(data: any) {
+  public changeProfile(data: ChangeProfileData) {
     return this.http.put('/profile', data);
   }
 
@@ -47,11 +51,6 @@ export class UserApi extends BaseAPI {
   public logout() {
     return this.http.post('/logout');
   }
-
-  create = undefined;
-  update = undefined;
-  delete = undefined;
-  read = undefined;
 }
 
 export default new UserApi();

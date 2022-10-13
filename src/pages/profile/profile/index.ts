@@ -20,7 +20,6 @@ class ProfileBasePage extends Block {
 
   init(): void {
     AuthController.fetchUser();
-    console.log(this.children);
 
   }
 

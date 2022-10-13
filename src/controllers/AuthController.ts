@@ -32,10 +32,8 @@ export class AuthController {
   }
 
   async fetchUser() {
-      const user = await this.api.read();
-      store.set('user', user);
-      console.log(store);
-
+    const user = await this.api.read();
+    store.set('user', user);
   }
 
   async logout() {
@@ -44,7 +42,7 @@ export class AuthController {
 
       router.go('/');
     } catch (e: any) {
-      // console.error(e.message);
+      console.error(e.message);
     }
   }
 }

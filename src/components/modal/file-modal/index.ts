@@ -27,7 +27,6 @@ export class FileModal extends Block {
     return this.compile(template, {
       ...this.props,
       children: this.children,
-
     });
   }
 }
