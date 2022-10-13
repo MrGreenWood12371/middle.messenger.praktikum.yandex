@@ -12,3 +12,4 @@
 Команда для запуска проекта: npm start
 Команда проверки стилей: npm run styleling
 Команда проверки JS: npm run lint
+Команда запуска тестов: npm run test
